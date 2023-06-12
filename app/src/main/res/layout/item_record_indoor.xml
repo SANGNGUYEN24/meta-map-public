@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/blue"
+        tools:src="@drawable/round_home_24" />
+
+    <TextView
+        android:id="@+id/tv_content_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/caption_text_size_medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_icon"
+        tools:text="Start location: The main gate" />
+
+    <View
+        android:id="@+id/v_vertical_line"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@drawable/vertical_line"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_preview_image"
+        app:layout_constraintEnd_toEndOf="@id/iv_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_icon"
+        app:layout_constraintTop_toBottomOf="@id/iv_icon" />
+
+    <TextView
+        android:id="@+id/tv_content_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/tv_content_main"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content_main"
+        tools:text="From the starting point, walk straight about 45 steps" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        style="@style/Theme.MetaMap.RoundedImageView_Medium"
+        android:id="@+id/iv_preview_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="64dp"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/tv_content_main"
+        app:layout_constraintTop_toBottomOf="@id/tv_content_detail"
+        tools:src="@drawable/placeholder" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

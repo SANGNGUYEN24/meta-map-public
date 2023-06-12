@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:src="@drawable/round_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_ic_origin"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/outline_circle_24"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back_button"
+        app:layout_constraintStart_toEndOf="@id/iv_back_button"
+        app:layout_constraintTop_toTopOf="@id/iv_back_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_input_origin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical"
+        android:hint="Your location"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back_button"
+        app:layout_constraintEnd_toStartOf="@id/iv_ic_more"
+        app:layout_constraintStart_toEndOf="@id/iv_ic_origin"
+        app:layout_constraintTop_toTopOf="@id/iv_back_button" />
+
+    <ImageView
+        android:id="@+id/iv_ic_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/round_more_vert_24"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mb_input_origin"
+        app:layout_constraintTop_toTopOf="@id/iv_back_button" />
+
+    <ImageView
+        android:id="@+id/iv_ic_from_origin_to_destination"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/round_more_vert_24"
+        app:layout_constraintEnd_toEndOf="@id/iv_ic_origin"
+        app:layout_constraintStart_toStartOf="@id/iv_ic_origin"
+        app:layout_constraintTop_toBottomOf="@id/iv_ic_origin"
+        app:tint="@color/grey_light" />
+
+    <ImageView
+        android:id="@+id/iv_ic_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/outline_location_on_24"
+        app:layout_constraintEnd_toEndOf="@id/iv_ic_from_origin_to_destination"
+        app:layout_constraintStart_toStartOf="@id/iv_ic_from_origin_to_destination"
+        app:layout_constraintTop_toBottomOf="@id/iv_ic_from_origin_to_destination" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_input_destination"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:hint="Choose destination"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ic_destination"
+        app:layout_constraintEnd_toEndOf="@id/mb_input_origin"
+        app:layout_constraintStart_toStartOf="@id/mb_input_origin"
+        app:layout_constraintTop_toTopOf="@id/iv_ic_destination" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_ic_swap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/round_swap_vert_24"
+        app:layout_constraintBottom_toBottomOf="@id/mb_input_destination"
+        app:layout_constraintStart_toEndOf="@id/mb_input_destination"
+        app:layout_constraintTop_toTopOf="@id/mb_input_destination" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

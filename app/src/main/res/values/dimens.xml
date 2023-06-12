@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="headline_text_size_large">64sp</dimen>
+    <dimen name="headline_text_size_medium">48sp</dimen>
+    <dimen name="headline_text_size_small">36sp</dimen>
+    <dimen name="headline_text_size_xsmall">28sp</dimen>
+
+    <dimen name="subheading_text_size_large">24sp</dimen>
+    <dimen name="subheading_text_size_medium">22sp</dimen>
+    <dimen name="subheading_text_size_small">20sp</dimen>
+    <dimen name="subheading_text_size_xsmall">18sp</dimen>
+
+    <dimen name="body_text_size_large">20sp</dimen>
+    <dimen name="body_text_size_medium">18sp</dimen>
+    <dimen name="body_text_size_small">16sp</dimen>
+    <dimen name="body_text_size_xsmall">14sp</dimen>
+
+    <dimen name="caption_text_size_large">18sp</dimen>
+    <dimen name="caption_text_size_medium">16sp</dimen>
+    <dimen name="caption_text_size_small">14sp</dimen>
+    <dimen name="caption_text_size_xsmall">12sp</dimen>
+
+    <dimen name="padding_side_parent">10dp</dimen>
+</resources>

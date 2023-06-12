@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_popup_window"
+    android:paddingBottom="16dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/round_close_24"
+        app:title="HCMUT Map" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/grey_light"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_user_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:riv_border_color="@color/grey_light"
+        app:riv_border_width="1dp"
+        app:riv_corner_radius="60dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_user_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_user_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/iv_user_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_user_avatar">
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in_with_google"
+            android:textColor="@color/black"
+            android:textSize="@dimen/caption_text_size_medium" />
+
+        <ProgressBar
+            android:id="@+id/pb_siging_google"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:indeterminateTint="@color/blue"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/caption_text_size_xsmall"
+            android:visibility="gone"
+            tools:text="nguyendinsang102@gmail.com" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/guideline2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/grey_light"
+        app:layout_constraintTop_toBottomOf="@id/iv_user_avatar" />
+
+    <ImageView
+        android:id="@+id/iv_app_info_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/round_info_24"
+        app:layout_constraintEnd_toEndOf="@id/iv_user_avatar"
+        app:layout_constraintStart_toStartOf="@id/iv_user_avatar"
+        app:layout_constraintTop_toBottomOf="@id/guideline2" />
+
+    <TextView
+        android:id="@+id/iv_app_info_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="About HCMUT Map"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/iv_app_info_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/ll_user_info"
+        app:layout_constraintTop_toTopOf="@id/iv_app_info_icon" />
+
+    <ImageView
+        android:id="@+id/iv_app_info_sign_out_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/round_logout_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/iv_app_info_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_app_info_icon"
+        app:layout_constraintTop_toBottomOf="@id/iv_app_info_icon"
+        app:tint="@color/red" />
+
+    <TextView
+        android:id="@+id/tv_app_info_log_out_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/log_out"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/iv_app_info_sign_out_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/ll_user_info"
+        app:layout_constraintTop_toTopOf="@id/iv_app_info_sign_out_icon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

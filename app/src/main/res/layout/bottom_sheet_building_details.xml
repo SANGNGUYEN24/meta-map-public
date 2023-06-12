@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:background="@drawable/background_bottom_sheet"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <View
+        android:id="@+id/v_anchor"
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:background="@drawable/background_anchor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_building_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:text="@string/loading"
+        android:textColor="@color/black"
+        android:textSize="@dimen/subheading_text_size_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_anchor"
+        tools:text="Building A4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_direction"
+        style="@style/Theme.MetaMap.MaterialButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Direction"
+        app:icon="@drawable/round_directions_24"
+        app:layout_constraintEnd_toStartOf="@+id/bt_share"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/tv_building_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_building_name" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_share"
+        style="@style/Theme.MetaMap.MaterialOutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/white"
+        android:text="Share"
+        app:icon="@drawable/baseline_share_24"
+        app:layout_constraintEnd_toEndOf="@id/tv_building_name"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_direction"
+        app:layout_constraintTop_toBottomOf="@+id/tv_building_name" />
+
+    <ScrollView
+        android:id="@+id/sv_contents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_direction">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_building_photo"
+                style="@style/Theme.MetaMap.RoundedImageView_Large"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                tools:src="@drawable/placeholder" />
+
+            <TextView
+                android:id="@+id/tv_building_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                tools:text="@string/loading" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

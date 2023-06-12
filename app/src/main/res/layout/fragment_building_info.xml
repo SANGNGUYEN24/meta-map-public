@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abl_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:navigationIcon="@drawable/round_arrow_back_24"
+            tools:title="Building A4 - OISP" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_light"
+        app:layout_constraintBottom_toBottomOf="@id/abl_appbar" />
+
+    <ImageView
+        android:id="@+id/iv_ic_origin"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/outline_circle_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/abl_appbar" />
+
+    <ImageView
+        android:id="@+id/iv_ic_from_origin_to_destination"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/round_more_vert_24"
+        app:layout_constraintEnd_toEndOf="@id/iv_ic_origin"
+        app:layout_constraintStart_toStartOf="@id/iv_ic_origin"
+        app:layout_constraintTop_toBottomOf="@id/iv_ic_origin"
+        app:tint="@color/grey_light" />
+
+    <ImageView
+        android:id="@+id/iv_ic_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/outline_location_on_24"
+        app:layout_constraintEnd_toEndOf="@id/iv_ic_from_origin_to_destination"
+        app:layout_constraintStart_toStartOf="@id/iv_ic_from_origin_to_destination"
+        app:layout_constraintTop_toBottomOf="@id/iv_ic_from_origin_to_destination" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_input_origin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ic_origin"
+        app:layout_constraintEnd_toStartOf="@id/iv_scan_qr"
+        app:layout_constraintStart_toEndOf="@id/iv_ic_origin"
+        app:layout_constraintTop_toTopOf="@id/iv_ic_origin"
+        tools:text="Building A4 gate" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_input_destination"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ic_destination"
+        app:layout_constraintEnd_toEndOf="@id/mb_input_origin"
+        app:layout_constraintStart_toStartOf="@id/mb_input_origin"
+        app:layout_constraintTop_toTopOf="@id/iv_ic_destination"
+        tools:text="Choose room" />
+
+    <ImageView
+        android:id="@+id/iv_scan_qr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/round_qr_code_scanner_24"
+        app:layout_constraintBottom_toBottomOf="@id/mb_input_origin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mb_input_origin"
+        app:layout_constraintTop_toBottomOf="@id/abl_appbar"
+        app:layout_constraintTop_toTopOf="@id/mb_input_origin" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_indoor_paths"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/ll_create_indoor_route"
+        app:layout_constraintTop_toBottomOf="@+id/mb_input_destination"
+        app:layout_constraintVertical_bias="0"
+        tools:listitem="@layout/item_indoor_path" />
+
+    <View
+        android:id="@+id/v_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_light"
+        app:layout_constraintBottom_toTopOf="@id/ll_create_indoor_route" />
+
+    <LinearLayout
+        android:id="@+id/ll_create_indoor_route"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/tv_create_indoor_route_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create another indoor route to guide other people or use the existing routes." />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_create_route"
+            style="@style/Theme.MetaMap.MaterialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_route" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

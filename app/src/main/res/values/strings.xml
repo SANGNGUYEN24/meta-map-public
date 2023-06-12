@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Meta Map</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="directions_activity_toast_message">%sm</string>
+    <string name="search_here">Search here</string>
+    <string name="loading">Loading...</string>
+    <string name="explore_this_building">Explore this building</string>
+
+    <string name="record_item_start_location_main_content">Start location</string>
+    <string name="record_item_start_location_detail_content_one">From the start location, walk straight about %d step</string>
+    <string name="record_item_start_location_detail_content_others">From the start location, walk straight about %d steps</string>
+
+    <string name="record_item_in_record_turn_right_main_content">Turn right</string>
+    <string name="record_item_in_record_turn_left_main_content">Turn left</string>
+    <string name="record_item_in_record_detail_content_one">And walk straight about %d step</string>
+    <string name="record_item_in_record_detail_content_others">And walk straight about %d steps</string>
+
+    <string name="tracking_turn_direction">You just turned %s</string>
+    <string name="tracking_step_count_one">and walked %d step</string>
+    <string name="tracking_step_count_others">and walked %d steps</string>
+    <string name="tracking_ste_start_location">You\'ve taken %d</string>
+    <string name="create_route">Create route</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="log_out">Log out</string>
+</resources>
